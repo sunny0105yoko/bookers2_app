@@ -1,7 +1,7 @@
+<%= render 'books/list', book: @book, user: current_user %>
 <h1>Books</h1>
-<%= @books.each do |book| %>
-
-  <p>Title</p>
-  <span><%= book.title %></span>
-  
+<% @books.each do |book| %>
+  <span>
+    <% link_to book.title, book_path(list.id) %>
+  </span>
 <% end %>

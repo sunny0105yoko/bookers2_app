@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   #get 'users/edit'
   #get 'books/edit'
   #get 'homes/top
+  post 'books' => 'books#create'
   resources :books, only: [:new, :create, :index, :show, :edit]
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show, :edit, :update, :index]
 end

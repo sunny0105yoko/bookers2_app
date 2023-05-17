@@ -4,6 +4,11 @@ class UsersController < ApplicationController
     @books =@user.books
   end
   
+  def index
+    @users =User.all
+    @book = Book.new
+  end
+  
   def edit
     @user =User.find(params[:id])
   end
@@ -18,7 +23,7 @@ private
   
   def user_params
     #params.require(:user).permit(:name, :email, :password)
-    params.require(:user).permit(:name, :book, :profile_image)
+    params.require(:user).permit(:name, :book, :profile_image, :introduction)
   end
 
   def is matching_login_user
