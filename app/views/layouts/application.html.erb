@@ -13,12 +13,14 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <div class="container">
-          <span>Bookers</span>
+          <a class="navbar-brand text-light" href="/">
+            <span>Bookers</span></a>
           <ul class="navbar-nav ml-auto">
           <% if user_signed_in? %>
             <li>
+              <i class="fas fa-home"></i>
               <%= link_to "Home", user_path(current_user.id) %>
             </li>
             <li>
@@ -53,7 +55,7 @@
             <p>CopyRight Infratop.inc</p>
           </div>
         </div>
-          
+
       </div>
     </footer>
   </body>
