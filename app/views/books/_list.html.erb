@@ -7,7 +7,12 @@
   <h3><%= user.introduction %></h3>
   
   <% if user = current_user %>
-    <p><%= link_to "プロフィール編集", edit_user_path(user.id) %></p>
+  <div class="row">
+    <li><%= link_to edit_user_path(user.id) do %>
+      <i class="fas fa-user-cog"></i> 
+      <i class="btn btn-secondary"></i>
+    <% end %>
+    </li>
   <% end %>
 </div>
 
