@@ -1,18 +1,23 @@
+<p id="notice"></p>
 <h2>User info</h2>
 <!-- ユーザーの詳細 -->
 <div>
   <%= image_tag user.get_profile_image(100,100) %>
-
-  <h3><%= user.name %></h3>
-  <h3><%= user.introduction %></h3>
+  <table class="table">
+    <tbody>
+     <tr>
+       <th>name</th>
+       <th><%= user.name %></th>
+     </tr>
+     <tr>
+       <th>introduction</th>
+       <th><%= user.introduction %></th>
+     </tr>
+    </tbody>
+  </table>
   
   <% if user = current_user %>
-  <div class="row">
-    <li><%= link_to edit_user_path(user.id) do %>
-      <i class="fas fa-user-cog"></i> 
-      <i class="btn btn-secondary"></i>
-    <% end %>
-    </li>
+    <p><%= link_to "プロフィール編集", edit_user_path(user.id) %></p>
   <% end %>
 </div>
 
