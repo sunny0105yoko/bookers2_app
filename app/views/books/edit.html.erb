@@ -1,3 +1,7 @@
+<p id="notice"></p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-o mx-auto">
 <h1>Editing Book</h1>
 
 <% if @book.errors.any? %>
@@ -15,11 +19,14 @@
 <%= f.text_field :title %>
 
 <h4>Opinion</h4>
-<%= f.text_field :body %>
+<%= f.text_field :body %><br>
 
-<%= f.submit 'Update Book' %>
+<%= f.submit 'Update Book', class: 'btn btn-sm btn-success' %><br>
 
 <%= link_to "Show",  book_path(@book.id) %>
 <%= link_to "Back", "/books" %>
   
 <% end %>
+</div>
+</div>
+</div>

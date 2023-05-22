@@ -16,13 +16,10 @@
     </tbody>
   </table>
   <div calass="row">
-  <% if user = current_user %>
-    <p><%= link_to edit_user_path(user.id), class: 'btn btn-outline-secondary btn-block' do %>
-    <i class="fas fa-user-cog"></i>
+    <%= link_to edit_user_path(user), class: 'btn btn-outline-secondary btn-block' do %>
+     <i class="fas fa-user-cog"></i>
     <% end %>
-    </div>
-  <% end %>
-  </p>
+  </div>
 </div>
 
 <!--ユーザー投稿画面　-->
@@ -30,9 +27,9 @@
 <%= form_with model:book do |f| %>
   <h6>Title</h6>
   <%= f.text_field :title %>
-	
+
   <h6>Opinion</h6>
   <%= f.text_area :body %>
-	
+
   <%= f.submit 'Create Book', class: 'btn btn-success' %>
 <% end %>
